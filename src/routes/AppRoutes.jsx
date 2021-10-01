@@ -7,6 +7,7 @@ import {
 import Categories from '../components/Categories';
 import Productos from '../components/Productos';
 import Navbar from '../components/Navbar'
+import Descripcion from '../components/Descripcion';
 
 export default function AppRoutes() {
     return (
@@ -20,7 +21,9 @@ export default function AppRoutes() {
 
                 <Route exact path="/categorias" component={Categories} />
 
-                <Route exact path="/categorias/:categoria" component={Productos} />
+                <Route exact path="/:categoria" component={Productos} />
+
+                <Route exact path="/:categoria/:id" component={Descripcion} />
 
             </Switch>
 

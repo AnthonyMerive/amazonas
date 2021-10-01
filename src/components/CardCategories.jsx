@@ -26,7 +26,7 @@ export default function CardCategories(props) {
             />
 
             <CardActions>
-                <Button sx={{ mt: 5 }} size="small"><Link to={`/categorias/${props.nombre.toLowerCase()}`}>ver más</Link></Button>
+                <Button sx={{ mt: 5 }} size="small"><Link style={{ textDecoration: 'none' }} to={`/${props.nombre.toLowerCase()}`}>ver más</Link></Button>
             </CardActions>
         </Card>
     );
