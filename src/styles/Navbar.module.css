@@ -1,0 +1,18 @@
+.navbar{
+    background-color: #131921;
+}
+
+.register{
+    color: white;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.register:hover{
+    color: #ffa703;
+}
+
+.car:hover{
+    color: #ffa703;
+}
+
