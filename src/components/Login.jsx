@@ -14,9 +14,9 @@ import Typography from '@mui/material/Typography';
 import Container from '@mui/material/Container';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 import GoogleIcon from '@mui/icons-material/Google';
-// import { useForm } from '../hooks/useForm'
-// import { useDispatch } from 'react-redux'
-// import { loginEmailPassword, loginGoogle } from '../actions/actionLogin'
+import { useForm } from '../hooks/useForm'
+import { useDispatch } from 'react-redux'
+import { loginEmailPassword, loginGoogle } from '../actions/actionLogin'
 
 //Funcion Copyright:
 
@@ -50,23 +50,23 @@ const theme = createTheme({
 
 export default function Login() {
 
-//   const dispatch = useDispatch();
+  const dispatch = useDispatch();
 
-//   const [values, handleInputChange, reset] = useForm({
-//     email: '',
-//     password: ''
-//   })
+  const [values, handleInputChange, reset] = useForm({
+    email: '',
+    password: ''
+  })
 
-//   const { email, password } = values;
+  const { email, password } = values;
 
   const handleLogin = (e) => {
     e.preventDefault();
-    // dispatch(loginEmailPassword(email, password))
-    // reset();
+    dispatch(loginEmailPassword(email, password))
+    reset();
   }
 
   const handleGoogle = () => {
-    // dispatch(loginGoogle(email, password))
+    dispatch(loginGoogle(email, password))
   }
 
   return (
@@ -116,8 +116,8 @@ export default function Login() {
                 label="Correo Electronico"
                 name="email"
                 autoComplete="email"
-                // value={email}
-                // onChange={handleInputChange}
+                value={email}
+                onChange={handleInputChange}
                 autoFocus
               />
               <TextField
@@ -128,8 +128,8 @@ export default function Login() {
                 type="password"
                 id="password"
                 autoComplete="current-password"
-                // value={password}
-                // onChange={handleInputChange}
+                value={password}
+                onChange={handleInputChange}
               />
 
               <Grid container justifyContent="flex-end">
