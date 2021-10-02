@@ -4,6 +4,7 @@ import data from '../datastructure.json'
 import ProductoCard from './ProductoCard'
 import { Grid } from '@mui/material'
 import { Box } from '@mui/system'
+import { Link } from 'react-router-dom'
 
 export default function Productos() {
 
@@ -13,8 +14,11 @@ export default function Productos() {
 
 
     return (<>
+    <Link to="/categorias"><h6 className="ms-3 mt-3" >Volver a categorias</h6></Link>
+        <Box sx={{ mt: "2%", ml: "3%" }}>
 
-        <Box sx={{ mt: "5%", ml: "3%" }}>
+            <h4 className="mb-3">{categoria}</h4>
+
             <Grid
                 container
                 spacing={{ xs: 3, md: 4 }}

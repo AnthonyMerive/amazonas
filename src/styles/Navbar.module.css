@@ -4,12 +4,17 @@
 
 .register{
     color: white;
-    font-size: 18px;
+    font-size: 12px;
     font-weight: bold;
+    cursor: pointer;
 }
 
 .register:hover{
     color: #ffa703;
+}
+
+.car{
+    margin-top: 20px;
 }
 
 .car:hover{

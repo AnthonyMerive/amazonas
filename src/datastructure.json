@@ -30,12 +30,8 @@
             "categoria": "Computadores",
             "envioGratis": false,
             "imagenes": [
-                {
-                    "principal": "https://m.media-amazon.com/images/I/713btinSrmS._AC_UL320_.jpg"
-                },
-                {
-                    "otras": "https://m.media-amazon.com/images/I/71jDooDQHpL._AC_UL320_.jpg"
-                }
+                "https://m.media-amazon.com/images/I/713btinSrmS._AC_UL320_.jpg",
+                "https://m.media-amazon.com/images/I/71jDooDQHpL._AC_UL320_.jpg"
             ]
         },
         {
@@ -46,12 +42,10 @@
             "categoria": "Electronicos",
             "envioGratis": true,
             "imagenes": [
-                {
-                    "principal": "https://m.media-amazon.com/images/I/51FYmkc03sL._AC_UY218_.jpg"
-                },
-                {
-                    "otras": "https://m.media-amazon.com/images/I/815e4H+YBaL._AC_UY218_.jpg"
-                }
+                "https://m.media-amazon.com/images/I/51FYmkc03sL._AC_UY218_.jpg",
+                "https://m.media-amazon.com/images/I/815e4H+YBaL._AC_UY218_.jpg",
+                "https://m.media-amazon.com/images/I/815e4H+YBaL._AC_UY218_.jpg",
+                "https://m.media-amazon.com/images/I/815e4H+YBaL._AC_UY218_.jpg"
             ]
         },
         {
@@ -62,12 +56,8 @@
             "categoria": "Musicales",
             "envioGratis": true,
             "imagenes": [
-                {
-                    "principal": "https://m.media-amazon.com/images/I/61yV6ElA7BL._AC_UL320_.jpg"
-                },
-                {
-                    "otras": "https://m.media-amazon.com/images/I/71X6M1DVS-L._AC_UL320_.jpg"
-                }
+                "https://m.media-amazon.com/images/I/61yV6ElA7BL._AC_UL320_.jpg",
+                "https://m.media-amazon.com/images/I/71X6M1DVS-L._AC_UL320_.jpg"
             ]
         },
         {
@@ -78,12 +68,8 @@
             "categoria": "Belleza",
             "envioGratis": false,
             "imagenes": [
-                {
-                    "principal": "https://m.media-amazon.com/images/I/61FkMz5kW-L._AC_UL320_.jpg"
-                },
-                {
-                    "otras": "https://m.media-amazon.com/images/I/814O9M0BNOL._AC_UL320_.jpg"
-                }
+                "https://m.media-amazon.com/images/I/61FkMz5kW-L._AC_UL320_.jpg",
+                "https://m.media-amazon.com/images/I/814O9M0BNOL._AC_UL320_.jpg"
             ]
         },
         {
@@ -94,12 +80,8 @@
             "categoria": "Electronicos",
             "envioGratis": true,
             "imagenes": [
-                {
-                    "principal": "https://m.media-amazon.com/images/I/51FYmkc03sL._AC_UY218_.jpg"
-                },
-                {
-                    "otras": "https://m.media-amazon.com/images/I/815e4H+YBaL._AC_UY218_.jpg"
-                }
+                "https://m.media-amazon.com/images/I/51FYmkc03sL._AC_UY218_.jpg",
+                "https://m.media-amazon.com/images/I/815e4H+YBaL._AC_UY218_.jpg"
             ]
         },
         {
@@ -110,12 +92,8 @@
             "categoria": "Electronicos",
             "envioGratis": true,
             "imagenes": [
-                {
-                    "principal": "https://m.media-amazon.com/images/I/51FYmkc03sL._AC_UY218_.jpg"
-                },
-                {
-                    "otras": "https://m.media-amazon.com/images/I/815e4H+YBaL._AC_UY218_.jpg"
-                }
+                "https://m.media-amazon.com/images/I/51FYmkc03sL._AC_UY218_.jpg",
+                "https://m.media-amazon.com/images/I/815e4H+YBaL._AC_UY218_.jpg"
             ]
         },
         {
@@ -126,12 +104,8 @@
             "categoria": "Electronicos",
             "envioGratis": true,
             "imagenes": [
-                {
-                    "principal": "https://m.media-amazon.com/images/I/815e4H+YBaL._AC_UY218_.jpg"
-                },
-                {
-                    "otras": "https://m.media-amazon.com/images/I/815e4H+YBaL._AC_UY218_.jpg"
-                }
+                "https://m.media-amazon.com/images/I/815e4H+YBaL._AC_UY218_.jpg",
+                "https://m.media-amazon.com/images/I/815e4H+YBaL._AC_UY218_.jpg"
             ]
         },
         {
@@ -142,12 +116,8 @@
             "categoria": "Musicales",
             "envioGratis": true,
             "imagenes": [
-                {
-                    "principal": "https://m.media-amazon.com/images/I/815e4H+YBaL._AC_UY218_.jpg"
-                },
-                {
-                    "otras": "https://m.media-amazon.com/images/I/815e4H+YBaL._AC_UY218_.jpg"
-                }
+                "https://m.media-amazon.com/images/I/815e4H+YBaL._AC_UY218_.jpg",
+                "https://m.media-amazon.com/images/I/815e4H+YBaL._AC_UY218_.jpg"
             ]
         },
         {
@@ -158,12 +128,8 @@
             "categoria": "Musicales",
             "envioGratis": true,
             "imagenes": [
-                {
-                    "principal": "https://m.media-amazon.com/images/I/61yV6ElA7BL._AC_UL320_.jpg"
-                },
-                {
-                    "otras": "https://m.media-amazon.com/images/I/71X6M1DVS-L._AC_UL320_.jpg"
-                }
+                "https://m.media-amazon.com/images/I/61yV6ElA7BL._AC_UL320_.jpg",
+                "https://m.media-amazon.com/images/I/71X6M1DVS-L._AC_UL320_.jpg"
             ]
         },
         {
@@ -174,12 +140,8 @@
             "categoria": "Musicales",
             "envioGratis": true,
             "imagenes": [
-                {
-                    "principal": "https://m.media-amazon.com/images/I/815e4H+YBaL._AC_UY218_.jpg"
-                },
-                {
-                    "otras": "https://m.media-amazon.com/images/I/815e4H+YBaL._AC_UY218_.jpg"
-                }
+                "https://m.media-amazon.com/images/I/815e4H+YBaL._AC_UY218_.jpg",
+                "https://m.media-amazon.com/images/I/815e4H+YBaL._AC_UY218_.jpg"
             ]
         },
         {
@@ -190,12 +152,8 @@
             "categoria": "Musicales",
             "envioGratis": true,
             "imagenes": [
-                {
-                    "principal": "https://m.media-amazon.com/images/I/61yV6ElA7BL._AC_UL320_.jpg"
-                },
-                {
-                    "otras": "https://m.media-amazon.com/images/I/71X6M1DVS-L._AC_UL320_.jpg"
-                }
+                "https://m.media-amazon.com/images/I/61yV6ElA7BL._AC_UL320_.jpg",
+                "https://m.media-amazon.com/images/I/71X6M1DVS-L._AC_UL320_.jpg"
             ]
         },
         {
@@ -206,12 +164,8 @@
             "categoria": "Musicales",
             "envioGratis": true,
             "imagenes": [
-                {
-                    "principal": "https://m.media-amazon.com/images/I/815e4H+YBaL._AC_UY218_.jpg"
-                },
-                {
-                    "otras": "https://m.media-amazon.com/images/I/815e4H+YBaL._AC_UY218_.jpg"
-                }
+                "https://m.media-amazon.com/images/I/815e4H+YBaL._AC_UY218_.jpg",
+                "https://m.media-amazon.com/images/I/815e4H+YBaL._AC_UY218_.jpg"
             ]
         },
         {
@@ -222,12 +176,8 @@
             "categoria": "Musicales",
             "envioGratis": true,
             "imagenes": [
-                {
-                    "principal": "https://m.media-amazon.com/images/I/815e4H+YBaL._AC_UY218_.jpg"
-                },
-                {
-                    "otras": "https://m.media-amazon.com/images/I/815e4H+YBaL._AC_UY218_.jpg"
-                }
+                "https://m.media-amazon.com/images/I/815e4H+YBaL._AC_UY218_.jpg",
+                "https://m.media-amazon.com/images/I/815e4H+YBaL._AC_UY218_.jpg"
             ]
         },
         {
@@ -238,15 +188,9 @@
             "categoria": "Musicales",
             "envioGratis": true,
             "imagenes": [
-                {
-                    "principal": "https://m.media-amazon.com/images/I/815e4H+YBaL._AC_UY218_.jpg"
-                },
-                {
-                    "otras": "https://m.media-amazon.com/images/I/815e4H+YBaL._AC_UY218_.jpg"
-                }
+                "https://m.media-amazon.com/images/I/815e4H+YBaL._AC_UY218_.jpg",
+                "https://m.media-amazon.com/images/I/815e4H+YBaL._AC_UY218_.jpg"
             ]
         }
-
-      
     ]
 }

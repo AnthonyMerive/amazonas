@@ -32,10 +32,10 @@ function Copyright(props) {
 const theme = createTheme({
     palette: {
         primary: {
-            light: '#ffa703',
+            light: '#FFD501',
             main: '#ffa703',
-            dark: '#FF6A03',
-            contrastText: '#fff',
+            dark: '#FF3B01',
+            contrastText: '#FFFFFF',
         },
     },
 });
@@ -67,7 +67,6 @@ export default function Register() {
 
                 <Box
                     sx={{
-                        marginTop: 1,
                         display: 'flex',
                         flexDirection: 'column',
                         alignItems: 'center',
@@ -97,7 +96,7 @@ export default function Register() {
                     <Box
                         component="form"
                         noValidate
-                        sx={{ mt: 3 }}
+                        sx={{ mt: 2 }}
                         onSubmit={handleRegister}
                     >
 
@@ -126,6 +125,9 @@ export default function Register() {
                                     // value={email}
                                     // onChange={handleInputChange}
                                     autoComplete="email"
+                                    sx={{
+                                        mt: 1,
+                                    }}
                                 />
                             </Grid>
 
@@ -140,6 +142,9 @@ export default function Register() {
                                     type="password"
                                     id="password"
                                     autoComplete="new-password"
+                                    sx={{
+                                        mt: 1,
+                                    }}
                                 />
                             </Grid>
 
@@ -153,18 +158,21 @@ export default function Register() {
                                     type="text"
                                     id="telefono"
                                     autoComplete="new-password"
+                                    sx={{
+                                        mt: 1,
+                                    }}
                                 />
                             </Grid>
 
                         </Grid>
 
                         <Button
-                            type="submit"
+                            type="button"
                             fullWidth
                             variant="contained"
                             sx={{
                                 mt: 3,
-                                bgcolor: '#F36E6E'
+                                bgcolor: '#C81313'
                             }}
                             endIcon={<GoogleIcon />}
                         >

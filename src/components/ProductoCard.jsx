@@ -18,7 +18,7 @@ export default function ProductoCard(props) {
                         component="img"
                         width="250"
                         height="250"
-                        image={props.imagenes[0].principal}
+                        image={props.imagenes[0]}
                         alt={props.nombre}
                         sx={{
                             objectFit: "contain"

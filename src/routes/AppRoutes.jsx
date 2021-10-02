@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import {
     BrowserRouter as Router,
     Switch,
@@ -10,10 +10,13 @@ import Navbar from '../components/Navbar'
 import Descripcion from '../components/Descripcion';
 
 export default function AppRoutes() {
+
+    const [auth, setAuth] = useState(true)
+    
     return (
         <Router>
 
-            <Navbar />
+            <Navbar auth={auth}/>
 
             <Switch>
 
