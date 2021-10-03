@@ -1,9 +1,9 @@
 import * as React from 'react';
-import { useEffect } from 'react'
+import { useEffect, useState } from 'react'
 import Avatar from '@mui/material/Avatar';
 import Button from '@mui/material/Button';
 import CssBaseline from '@mui/material/CssBaseline';
-import Link from '@mui/material/Link';
+import { Link } from 'react-router-dom';
 import Grid from '@mui/material/Grid';
 import Box from '@mui/material/Box';
 import Typography from '@mui/material/Typography';
@@ -17,7 +17,8 @@ import { logout } from '../actions/actionLogin'
 import { useDispatch } from 'react-redux';
 import { registerSincrono } from '../actions/actionRegister';
 import { fileUpload } from '../helpers/fileUpload';
-import {addFoto} from '../actions/actionAddFoto'
+import { addFoto } from '../actions/actionAddFoto'
+import { IconButton } from '@mui/material';
 
 const theme = createTheme({
     palette: {
@@ -35,7 +36,6 @@ export default function Usuario(props) {
     const perfil = useSelector(store => store.login)
     const nuevoUsuario = useSelector(store => store.register)
 
-
     const dispatch = useDispatch()
 
     const handleCerrarSesion = () => {
@@ -43,14 +43,16 @@ export default function Usuario(props) {
         dispatch(registerSincrono());
         props.setShow(false)
         props.setShowlog(false)
+        localStorage.clear();
     }
 
     const idPerfil = perfil.id;
     const idNuevoUsuario = nuevoUsuario.id;
     const fotoPerfil = perfil.foto;
+    const [imgUrl, setImgUrl] = useState(fotoPerfil)
 
     useEffect(() => {
-        if (idPerfil === idNuevoUsuario || fotoPerfil === null) {
+        if (fotoPerfil === null) {
             alert('cargue una foto de perfil')
         }
     }, [idPerfil, idNuevoUsuario, fotoPerfil])
@@ -63,8 +65,7 @@ export default function Usuario(props) {
         const file = e.target.files[0];
         fileUpload(file)
             .then(resp => {
-                console.log(resp)
-                dispatch(addFoto(resp))
+                setImgUrl(resp)
             })
             .catch(error => {
                 console.log('Vuelva a cargar la imagen');
@@ -72,7 +73,9 @@ export default function Usuario(props) {
             })
     }
 
-
+    useEffect(() => {
+        dispatch(addFoto(imgUrl))
+    }, [imgUrl, dispatch])
 
     return (
         <ThemeProvider theme={theme}>
@@ -102,7 +105,7 @@ export default function Usuario(props) {
                         <Avatar alt={perfil.displayName} src={`${perfil.foto}`}
                             sx={{ width: 80, height: 80 }} />
                         :
-                        <div className="form-group col-md-4">
+                        <div>
                             <input
                                 id="fileSelector"
                                 type="file"
@@ -110,13 +113,14 @@ export default function Usuario(props) {
                                 style={{ display: 'none' }}
                                 onChange={handleFileChanged}
                             />
-
-                            <AddPhotoAlternateIcon
-                                onClick={handleActualizafoto}
-                                sx={{
-                                    fontSize: "60px",
-                                    color: "#131921"
-                                }} />
+                            <IconButton aria-label="actualizaFoto">
+                                <AddPhotoAlternateIcon
+                                    onClick={handleActualizafoto}
+                                    sx={{
+                                        fontSize: "60px",
+                                        color: "#131921"
+                                    }} />
+                            </IconButton>
                         </div>
                     }
 
@@ -165,7 +169,13 @@ export default function Usuario(props) {
                                 }}
                                 endIcon={<SellIcon />}
                             >
-                                Vender
+                                <Link
+                                    onClick={() => props.setShow(false)}
+                                    to="/agregarProducto"
+                                    style={{ textDecoration: 'none', color:'grey' }}
+                                >
+                                    Vender
+                                </Link>
 
                             </Button>
 
@@ -184,7 +194,12 @@ export default function Usuario(props) {
                                 }}
                                 endIcon={<LoginIcon />}
                             >
-                                cerrar sesion
+                                <Link
+                                    to="/"
+                                    style={{ textDecoration: 'none', color:'white' }}
+                                >
+                                    cerrar sesion
+                                </Link>
                             </Button>
 
 
@@ -195,7 +210,7 @@ export default function Usuario(props) {
                                 mt: 3,
                             }}>
                             <Grid item>
-                                <Link href="#" variant="body2">
+                                <Link to="/">
                                     ¿Problemas con tu cuenta?
                                 </Link>
                             </Grid>

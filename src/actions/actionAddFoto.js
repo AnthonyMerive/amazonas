@@ -1,18 +1,23 @@
 import { types } from '../types/types'
 import { getAuth, updateProfile } from 'firebase/auth'
 
-export const addFoto = async (foto) => {
+export const addFoto = (foto) => {
     console.log(foto)
-    const auth = getAuth();
-    await updateProfile(auth.currentUser,{
-        photoURL: foto,
-     })
-     return (dispatch) => {
-        dispatch(actualizaLogin(foto))
-     }
+
+    return (dispatch) => {
+        const auth = getAuth();
+
+        updateProfile(auth.currentUser, {
+            photoURL: foto
+        }).then(() => {
+            dispatch(actualizaLogin(foto))
+        }).catch((error) => {
+            console.log(error)
+        });
+    }
 }
 
-export const actualizaLogin = (pic) =>{
+export const actualizaLogin = (pic) => {
     return {
         type: types.actualiza,
         payload: pic

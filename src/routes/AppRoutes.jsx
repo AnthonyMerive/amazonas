@@ -9,8 +9,10 @@ import Productos from '../components/Productos';
 import Navbar from '../components/Navbar'
 import Descripcion from '../components/Descripcion';
 import { useSelector } from 'react-redux';
+import AgregarProducto from '../components/AgregarProducto'
 // import { getAuth, onAuthStateChanged } from '@firebase/auth';
 // import { loginEmailPassword } from '../actions/actionLogin'
+import PrivateRoutes from './PrivateRoutes';
 
 export default function AppRoutes() {
 
@@ -39,11 +41,15 @@ export default function AppRoutes() {
 
                 <Route exact path="/" component={Categories} />
 
+                <PrivateRoutes exact path="/addProducto" component={AgregarProducto} /> 
+
                 <Route exact path="/categorias" component={Categories} />
 
                 <Route exact path="/:categoria" component={Productos} />
 
                 <Route exact path="/:categoria/:id" component={Descripcion} />
+
+                
 
             </Switch>
 
