@@ -27,6 +27,7 @@ export default function Navbar(props) {
     const [show, setShow] = useState(false)
     const [showlog, setShowlog] = useState(false)
 
+
     return (<>
         <nav className={`navbar navbar-expand-lg ${styles.navbar}`}>
             <div className="container-fluid">
@@ -38,25 +39,19 @@ export default function Navbar(props) {
                 <div className="d-flex justify-content-end me-3">
 
                     <ul className="navbar-nav me-auto ms-5 mb-lg-0">
-                        {!props.auth ?
-
+                        {props.auth ?
                             <li className="nav-item">
-                                <span onClick={() => setShow(true)} className={`nav-link active ${styles.register}`} aria-current="page"><AddIcon />REGISTRATE</span>
+                                <span onClick={() => setShow(true)} className="nav-link" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                    <AccountCircleIcon  className={styles.car} sx={{ color: "white", fontSize: "30px" }} />
+                                </span>
+                            </li>
+                            :
+                            <li className="nav-item">
+                                <span onClick={() =>{ setShow(true)}} className={`nav-link active ${styles.register}`} aria-current="page"><AddIcon />REGISTRATE</span>
                                 <span onClick={() => { setShowlog(true); setShow(false) }} className={`nav-link active ${styles.register}`} aria-current="page"><AccountCircleIcon sx={{ mr: 1 }} />INGRESA</span>
                             </li>
 
-                            :
-                            <li className="nav-item dropstart">
-                                <span className="nav-link down-toggle" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                    <AccountCircleIcon className={styles.car} sx={{ color: "white", fontSize: "30px" }} />
-                                </span>
-                                <ul className="dropdown-menu" aria-labelledby="navbarDropdown">
-                                    <li><span style={{cursor: "pointer"}} onClick={() => setShow(true)} className="dropdown-item">Mi perfil</span></li>
-                                    <li><span style={{cursor: "pointer"}} className="dropdown-item">Mis ventas</span></li>
-                                    <li><hr className="dropdown-divider" /></li>
-                                    <li><span style={{cursor: "pointer"}} className="dropdown-item">Cerrar Sesion</span></li>
-                                </ul>
-                            </li>
+
                         }
                         <li className="nav-item">
                             <IconButton aria-label="cart">

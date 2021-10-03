@@ -2,8 +2,21 @@ import Offcanvas from 'react-bootstrap/Offcanvas'
 import Login from './Login'
 import Usuario from './Usuario'
 import Register from './Register'
+import { useSelector } from 'react-redux'
+import { useEffect } from 'react'
 
 export default function OffCanvas(props) {
+
+    const usuarioRegistrado = useSelector(store => store.register)
+    const show = props.setShow;
+    const showlog = props.setShowlog;
+ 
+        useEffect(() => {
+            usuarioRegistrado&&
+            show(false);
+            showlog(true);
+            
+        }, [usuarioRegistrado, show, showlog])
 
     return (<>
 
@@ -11,7 +24,7 @@ export default function OffCanvas(props) {
             <Offcanvas.Header closeButton />
             <Offcanvas.Body>
                 {props.auth ?
-                    <Usuario />
+                    <Usuario setShowlog={props.setShowlog} setShow={props.setShow} />
                     :
                     <Register />
                 }
@@ -19,7 +32,7 @@ export default function OffCanvas(props) {
             </Offcanvas.Body>
         </Offcanvas>
 
-        <Offcanvas placement="end" show={props.showlog} onHide={() => props.setShowlog(false)}>
+        <Offcanvas placement="end" show={props.auth?false:props.showlog} onHide={() => props.setShowlog(false)}>
             <Offcanvas.Header closeButton />
             <Offcanvas.Body>
 

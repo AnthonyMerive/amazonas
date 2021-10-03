@@ -12,9 +12,9 @@ import { createTheme, ThemeProvider } from '@mui/material/styles';
 import AddReactionIcon from '@mui/icons-material/AddReaction';
 import LoginIcon from '@mui/icons-material/Login';
 import GoogleIcon from '@mui/icons-material/Google';
-// import { useForm } from '../hooks/useForm'
-// import { useDispatch } from 'react-redux'
-// import { registerSincrono } from '../actions/actionRegister'
+import { useForm } from '../hooks/useForm'
+import { useDispatch } from 'react-redux'
+import { registroEmailPasswordNombre } from '../actions/actionRegister'
 
 function Copyright(props) {
     return (
@@ -42,21 +42,21 @@ const theme = createTheme({
 
 export default function Register() {
 
-    // const dispatch = useDispatch();
+    const dispatch = useDispatch();
 
-    // const [values, handleInputChange, reset] = useForm({
-    //     email: '',
-    //     password: '',
-    //     nombreCompleto: '',
-    //     telefono: ''
-    // })
+    const [values, handleInputChange, reset] = useForm({
+        email: '',
+        password: '',
+        nombreCompleto: '',
+        telefono: ''
+    })
 
-    // const { email, password, nombreCompleto, telefono } = values;
+    const { email, password, nombreCompleto, telefono } = values;
 
     const handleRegister = (e) => {
         e.preventDefault();
-        // dispatch(registerSincrono(nombreCompleto, email, password, telefono))
-        // reset();
+        dispatch(registroEmailPasswordNombre(nombreCompleto, email, password, telefono))
+        reset();
     }
 
 
@@ -105,8 +105,8 @@ export default function Register() {
                                 <TextField
                                     autoComplete="fname"
                                     name="nombreCompleto"
-                                    // value={nombreCompleto}
-                                    // onChange={handleInputChange}
+                                    value={nombreCompleto}
+                                    onChange={handleInputChange}
                                     required
                                     fullWidth
                                     id="firstName"
@@ -122,8 +122,8 @@ export default function Register() {
                                     id="email"
                                     label="Correo Electronico"
                                     name="email"
-                                    // value={email}
-                                    // onChange={handleInputChange}
+                                    value={email}
+                                    onChange={handleInputChange}
                                     autoComplete="email"
                                     sx={{
                                         mt: 1,
@@ -136,8 +136,8 @@ export default function Register() {
                                     required
                                     fullWidth
                                     name="password"
-                                    // value={password}
-                                    // onChange={handleInputChange}
+                                    value={password}
+                                    onChange={handleInputChange}
                                     label="Contraseña"
                                     type="password"
                                     id="password"
@@ -148,21 +148,20 @@ export default function Register() {
                                 />
                             </Grid>
 
-                            <Grid item xs={12}>
+                            {/* <Grid item xs={12}>
                                 <TextField
                                     fullWidth
                                     name="telefono"
-                                    // value={telefono}
-                                    // onChange={handleInputChange}
+                                    value={telefono}
+                                    onChange={handleInputChange}
                                     label="Telefono Celular"
                                     type="text"
                                     id="telefono"
-                                    autoComplete="new-password"
                                     sx={{
                                         mt: 1,
                                     }}
                                 />
-                            </Grid>
+                            </Grid> */}
 
                         </Grid>
 
@@ -194,13 +193,6 @@ export default function Register() {
 
                         </Button>
 
-                        <Grid container justifyContent="flex-end">
-                            <Grid item>
-                                <Link href="#" variant="body2">
-                                    ¿Ya tienes una cuenta? Ingresa
-                                </Link>
-                            </Grid>
-                        </Grid>
                     </Box>
                 </Box>
                 <Copyright sx={{ mt: 5 }} />

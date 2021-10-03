@@ -17,6 +17,7 @@ import GoogleIcon from '@mui/icons-material/Google';
 import { useForm } from '../hooks/useForm'
 import { useDispatch } from 'react-redux'
 import { loginEmailPassword, loginGoogle } from '../actions/actionLogin'
+import { useSelector } from 'react-redux';
 
 //Funcion Copyright:
 
@@ -50,6 +51,8 @@ const theme = createTheme({
 
 export default function Login() {
 
+  const usuarioRegistrado = useSelector(store => store.register)
+
   const dispatch = useDispatch();
 
   const [values, handleInputChange, reset] = useForm({
@@ -57,7 +60,11 @@ export default function Login() {
     password: ''
   })
 
-  const { email, password } = values;
+  let { email, password } = values;
+
+  if (usuarioRegistrado.uid) {
+    email = usuarioRegistrado.correo;
+  }
 
   const handleLogin = (e) => {
     e.preventDefault();
@@ -74,119 +81,103 @@ export default function Login() {
       <Container component="main" maxWidth="xs">
         <CssBaseline />
 
-          <Box
-            sx={{
-              display: 'flex',
-              flexDirection: 'column',
-              alignItems: 'center',
-            }}
-          >
+        <Box
+          sx={{
+            display: 'flex',
+            flexDirection: 'column',
+            alignItems: 'center',
+          }}
+        >
 
-            <Avatar sx={{
-              m: 1,
-              bgcolor: '#ffa703',   
-              width: "60px",
-              height: "60px"
-            }}
-            >
-              {/* incono */}
-              <PersonIcon 
+          <Avatar sx={{
+            m: 1,
+            bgcolor: '#ffa703',
+            width: "60px",
+            height: "60px"
+          }}
+          >
+            {/* incono */}
+            <PersonIcon
               sx={{
                 fontSize: "60px",
                 color: "#131921"
-                
-              }}/>
 
-            </Avatar>
+              }} />
 
-            <Typography component="h1" variant="h5">
-              LOGIN
-            </Typography>
+          </Avatar>
 
-            <Box
-              onSubmit={handleLogin}
-              component="form"
-              noValidate
-              sx={{ mt: 1 }}
+          <Typography component="h1" variant="h5">
+            LOGIN
+          </Typography>
+
+          <Box
+            onSubmit={handleLogin}
+            component="form"
+            noValidate
+            sx={{ mt: 1 }}
+          >
+            <TextField
+              margin="normal"
+              fullWidth
+              id="email"
+              label="Correo Electronico"
+              name="email"
+              autoComplete="email"
+              value={usuarioRegistrado.uid ? usuarioRegistrado.correo : email}
+              onChange={handleInputChange}
+              autoFocus
+            />
+            <TextField
+              margin="normal"
+              fullWidth
+              name="password"
+              label="Contraseña"
+              type="password"
+              id="password"
+              autoComplete="current-password"
+              value={password}
+              onChange={handleInputChange}
+            />
+
+            <Grid container justifyContent="flex-end">
+              <FormControlLabel
+                control={<Checkbox value="remember" color="primary" />}
+                label="Recuerdame"
+              />
+            </Grid>
+
+            <Button
+              type="submit"
+              fullWidth
+              variant="contained"
+              onClick={handleGoogle}
+              sx={{
+                mt: 2,
+                bgcolor: '#C81313'
+              }}
+              endIcon={<GoogleIcon />}
             >
-              <TextField
-                margin="normal"
-                fullWidth
-                id="email"
-                label="Correo Electronico"
-                name="email"
-                autoComplete="email"
-                value={email}
-                onChange={handleInputChange}
-                autoFocus
-              />
-              <TextField
-                margin="normal"
-                fullWidth
-                name="password"
-                label="Contraseña"
-                type="password"
-                id="password"
-                autoComplete="current-password"
-                value={password}
-                onChange={handleInputChange}
-              />
+              Ingresa con Google
 
-              <Grid container justifyContent="flex-end">
-                <FormControlLabel
-                  control={<Checkbox value="remember" color="primary" />}
-                  label="Recuerdame"
-                />
-              </Grid>
+            </Button>
 
-              <Button
-                type="submit"
-                fullWidth
-                variant="contained"
-                onClick={handleGoogle}
-                sx={{
-                  mt: 2,
-                  bgcolor: '#F36E6E'
-                }}
-                endIcon={<GoogleIcon />}
-              >
-                Ingresa con Google
+            <Button
+              type="submit"
+              fullWidth
+              variant="contained"
+              sx={{
+                mt: 2,
+                mb: 2
+              }}
+              endIcon={<LoginIcon />}
+            >
+              entrar
 
-              </Button>
-
-              <Button
-                type="submit"
-                fullWidth
-                variant="contained"
-                sx={{
-                  mt: 2,
-                  mb: 2
-                }}
-                endIcon={<LoginIcon />}
-              >
-                entrar
-
-              </Button>
-
-              <Grid container>
-
-                <Grid item xs>
-                  <Link href="#" variant="body2">
-                    ¿Olvido su contraseña?
-                  </Link>
-                </Grid>
-
-                <Grid item>
-                  <Link href="#" variant="body2">
-                    {"¿No tienes cuenta? Registrate"}
-                  </Link>
-                </Grid>
-
-              </Grid>
-
-            </Box>
+            </Button>
 
           </Box>
+
+        </Box>
 
         <Copyright sx={{ mt: 8, mb: 4 }} />
 

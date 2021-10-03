@@ -8,37 +8,27 @@ import Categories from '../components/Categories';
 import Productos from '../components/Productos';
 import Navbar from '../components/Navbar'
 import Descripcion from '../components/Descripcion';
-import { useDispatch } from 'react-redux';
-import { getAuth, onAuthStateChanged } from '@firebase/auth';
-import { loginEmailPassword } from '../actions/actionLogin'
+import { useSelector } from 'react-redux';
+// import { getAuth, onAuthStateChanged } from '@firebase/auth';
+// import { loginEmailPassword } from '../actions/actionLogin'
 
 export default function AppRoutes() {
 
-    const dispatch = useDispatch();
-    const [checking, setChecking] = useState(true)
+    // const dispatch = useDispatch();
+    // const [checking, setChecking] = useState(true)
     const [auth, setAuth] = useState(false)
 
-    const autorizacion = getAuth()
+    // const autorizacion = getAuth()
 
-    useSelector
+    const usuarioLogeado = useSelector(store => store.login)
 
-    // useEffect(() => {
-    //     onAuthStateChanged(autorizacion, (user) => {
-    //         if (user?.uid) {
-    //             dispatch(loginEmailPassword(user.uid, user.displayName))
-    //             setAuth(true)
-    //         } else {
-    //             setAuth(false)
-    //         }
-    //         setChecking(false)
-    //     })
-    // }, [dispatch, setChecking, setAuth, autorizacion])
+    useEffect(() => {
+        usuarioLogeado.uid ?
+            setAuth(true)
+            :
+            setAuth(false)
+    }, [usuarioLogeado])
 
-    // if (checking) {
-    //     return (
-    //         <h2>Cargando...</h2>
-    //     )
-    // }
 
     return (
         <Router>
