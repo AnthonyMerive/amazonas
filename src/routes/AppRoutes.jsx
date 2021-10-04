@@ -39,9 +39,9 @@ export default function AppRoutes() {
 
             <Switch>
 
-                <Route exact path="/" component={Categories} />
+                <PrivateRoutes auth={auth} exact path="/agregarProducto" component={AgregarProducto} />
 
-                <PrivateRoutes exact path="/addProducto" component={AgregarProducto} /> 
+                <Route exact path="/" component={Categories} />
 
                 <Route exact path="/categorias" component={Categories} />
 
@@ -49,7 +49,7 @@ export default function AppRoutes() {
 
                 <Route exact path="/:categoria/:id" component={Descripcion} />
 
-                
+
 
             </Switch>
 

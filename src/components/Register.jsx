@@ -57,6 +57,7 @@ export default function Register() {
         e.preventDefault();
         dispatch(registroEmailPasswordNombre(nombreCompleto, email, password, telefono))
         reset();
+        
     }
 
 

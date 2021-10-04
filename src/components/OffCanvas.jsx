@@ -7,16 +7,21 @@ import { useEffect } from 'react'
 
 export default function OffCanvas(props) {
 
-    const usuarioRegistrado = useSelector(store => store.register)
-    const show = props.setShow;
-    const showlog = props.setShowlog;
- 
-        useEffect(() => {
-            usuarioRegistrado&&
-            show(false);
-            showlog(true);
+    const usuarioRegistrado = useSelector(store => store.register);
+    const idRegistrado = usuarioRegistrado.uid;
+
+    const setA = props.setShow;
+    const setB = props.setShowlog;
+
+    useEffect(() => {
+        if(idRegistrado!==undefined){
+            setA(false);
+            setB(true);
+        }
+    }, [idRegistrado,setA,setB])
+
+    
             
-        }, [usuarioRegistrado, show, showlog])
 
     return (<>
 

@@ -1,24 +1,24 @@
 import {createStore, combineReducers, compose, applyMiddleware } from 'redux';
 import {loginReducer} from '../reducers/loginReducer'
 import {registerReducer} from '../reducers/registerReducer'
+import {categoriasReducer} from '../reducers/categoriasReducer'
+import {productosReducer} from '../reducers/productosReducer'
 import { obtenerLocalStorage, guardarLocalStorage}from '../localStorage'
 import thunk from 'redux-thunk';
 
 // combina los reducer existentes
 const reducers = combineReducers({
-    //productos: productoReducer
     login: loginReducer,
-    register: registerReducer
-    //aca se agregarian los demas productos
-    //como un objeto
+    register: registerReducer,
+    categorias: categoriasReducer,
+    productos: productosReducer
+ 
 })
 
 const composeEnhancers = (typeof window !== 'undefined' &&
  window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__) || compose;
 
 const storageState = obtenerLocalStorage();
-
-console.log(storageState)
 
 //creamos el store
 export const store = createStore(
