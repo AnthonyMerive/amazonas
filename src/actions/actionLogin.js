@@ -1,6 +1,7 @@
 import { types } from '../types/types'
 import { getAuth, signInWithPopup, signInWithEmailAndPassword, signOut } from 'firebase/auth'
 import { googleAuth } from '../firebase/firebaseConfig'
+import Swal from 'sweetalert2';
 //autenticacion google
 
 const auth = getAuth();
@@ -34,7 +35,12 @@ export const loginEmailPassword = (email, password) => {
             const data = user.providerData[0];
             dispatch(loginSincrono(user.uid, data.displayName, data.photoURL, data.email))
         }).catch(error => {
-            console.log(error)
+            Swal.fire({
+                icon: 'error',
+                title: 'Contraseña o correo incorrecto',
+                showConfirmButton: false,
+                timer: 2000
+              })
         })
     }
 }
@@ -69,3 +75,4 @@ export const logoutSincrono = () => {
         type: types.logout
     }
 }
+
