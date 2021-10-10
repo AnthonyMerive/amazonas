@@ -1,6 +1,8 @@
 import { types } from "../types/types"
 
-export const registerReducer = (state = {}, action) => {
+const initialState= []
+
+export const registerReducer = (state = initialState, action) => {
     switch (action.type) {
         case types.register:
 
